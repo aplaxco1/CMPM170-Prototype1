@@ -186,9 +186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c3c7806fb0e464985e901e56f185a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObj: {fileID: 1875133474}
   moveSpeed: 4
   groundDrag: 2
   orientation: {fileID: 1388390509}
+  jumpForce: 8
+  jumpCooldown: 0.25
+  airMultiplier: 0.4
+  jumpKey: 32
 --- !u!1 &302006913
 GameObject:
   m_ObjectHideFlags: 0
