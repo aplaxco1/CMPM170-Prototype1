@@ -5,19 +5,24 @@ using UnityEngine;
 public class LightningKeybind : MonoBehaviour
 {
     public ParticleSystem particles;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Light pointLight;
+    public float maxIntensity = 20;
+    public float lightFlashTime = 0.8f;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-           particles.Play(true);
+            StartCoroutine(lightFlash());
         }
+    }
+
+    IEnumerator lightFlash()
+    {
+        particles.Play(true);
+        pointLight.intensity = maxIntensity;
+        yield return new WaitForSeconds(lightFlashTime);
+        pointLight.intensity = 0;
     }
 }
