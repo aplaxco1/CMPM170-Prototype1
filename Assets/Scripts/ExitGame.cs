@@ -38,7 +38,10 @@ public class ExitGame : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (!startFade)
+            GameObject[] pickups;
+            pickups = GameObject.FindGameObjectsWithTag("pickup");
+            float total = pickups.Length;
+            if (!startFade && total == 0)
             {
                 startFade = true;
             }
